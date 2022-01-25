@@ -138,6 +138,55 @@ typedef union {
   uint8_t POWER_BUTTON_CONFIG_COMBINED;
 } POWER_BUTTON_CONFIG_REG;
 
+// Standby Channel Register (pg. 39)
+typedef union {
+  struct
+  {
+    uint8_t CS1_STBY : 1;
+    uint8_t CS2_STBY : 1;
+    uint8_t CS3_STBY : 1;
+    uint8_t EMPTY_1 : 5;
+  } STANDBY_CHANNEL_FIELDS;
+  uint8_t STANDBY_CHANNEL_COMBINED;
+} STANDBY_CHANNEL_REG;
+
+// Standby Channel Register (pg. 40)
+typedef union {
+  struct
+  {
+    uint8_t STBY_CY_TIME : 2;
+    uint8_t STBY_SAMP_TIME : 2;
+    uint8_t STBY_AVG : 3;
+    uint8_t AVG_SUM : 1;
+  } STANDBY_CONFIG_FIELDS;
+  uint8_t STANDBY_CONFIG_COMBINED;
+} STANDBY_CONFIG_REG;
+
+// Standby Channel Register (pg. 41)
+typedef union {
+  struct
+  {
+    uint8_t STBY_SENSE : 3;
+    uint8_t EMPTY_1 : 5;
+  } STANDBY_SENSITIVITY_FIELDS;
+  uint8_t STANDBY_SENSITIVITY_COMBINED;
+} STANDBY_SENSITIVITY_REG;
+
+// Standby Channel Register (pg. 42)
+typedef union {
+  struct
+  {
+    uint8_t _1 : 1;
+    uint8_t _2 : 1;
+    uint8_t _4 : 1;
+    uint8_t _8 : 1;
+    uint8_t _16 : 1;
+    uint8_t _32 : 1;
+    uint8_t _64 : 1;
+    uint8_t EMPTY_1 : 1;
+  } STANDBY_THRESHOLD_FIELDS;
+  uint8_t STANDBY_THRESHOLD_COMBINED;
+} STANDBY_THRESHOLD_REG;
 // Interrupt Enable Register (pg. 33)
 typedef union {
   struct
